@@ -1,14 +1,10 @@
 // import { useState } from 'react'
 import "./App.css";
 
-import SideMenu from "./components/SideMenu";
+import VideoDetail from "./pages/VideoDetail";
 
 function App() {
-  return (
-    <div>
-      <SideMenu />
-    </div>
-  );
+  return <VideoDetail />;
 }
 
 export default App;
