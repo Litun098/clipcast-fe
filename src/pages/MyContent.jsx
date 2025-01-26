@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar'
 import SideMenu from '../components/SideMenu'
 import VideoList from '../components/VideoList'
 
-const History = () => {
+const MyContent = () => {
   return (
     <div>
       <div>
@@ -16,4 +16,4 @@ const History = () => {
   )
 }
 
-export default History
+export default MyContent

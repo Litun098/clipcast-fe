@@ -4,9 +4,10 @@ import SideMenu from "../components/SideMenu";
 import VideoDetails from "../components/VideoDetails";
 import VideoList from "../components/VideoList";
 
+
 const VideoDetail = () => {
   return (
-    <div className="h-screen overflow-y-auto bg-[#121212] text-white">
+    <div>
       <Navbar />
       <div className="flex">
         <SideMenu />

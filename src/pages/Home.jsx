@@ -1,14 +1,14 @@
 import Navbar from "../components/Navbar";
 import SideMenu from "../components/SideMenu";
-import Video from "../components/VideoCard";
+import VideoCard from "../components/VideoCard";
 
 const Home = () => {
   return (
-    <div className="h-screen overflow-y-auto bg-[#121212] text-white">
+    <div>
       <Navbar />
       <div className="flex">
         <SideMenu />
-        <Video />
+        <VideoCard />
       </div>
     </div>
   );

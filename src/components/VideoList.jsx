@@ -1,6 +1,6 @@
 const VideoList = () => {
   return (
-    <div className="mt-4 w-full max-w-3xl gap-x-4 md:flex">
+    <div className="mt-4 w-full max-h-52 max-w-3xl ml-2 gap-x-4 md:flex">
       <div className="relative mb-2 w-full md:mb-0 md:w-5/12">
         <div className="w-full pt-[56%]">
           <div className="absolute inset-0">
