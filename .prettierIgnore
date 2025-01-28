@@ -1,0 +1,21 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore lockfiles
+package-lock.json
+yarn.lock
+
+# Ignore HTML files:
+**/*.html
+
+/.vscode
+/,node_modules
+./dist
+
+*.env
+.env
+.env.sample*
+
+/.env
+/.env.sample

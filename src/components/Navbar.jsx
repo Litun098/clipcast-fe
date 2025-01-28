@@ -1,6 +1,17 @@
+import { useDispatch, useSelector } from "react-redux";
+
 import { Link } from "react-router-dom";
 
+import { logout } from "../store/authSlice";
+
 function Navbar() {
+  const authStatus = useSelector((state) => state.auth.status);
+  const user = useSelector((state) => state.auth.userData);
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
   return (
     <div>
       <header className="sticky inset-x-0 top-0 z-50 w-full border-b border-white bg-[#121212] px-4">
@@ -180,11 +191,22 @@ function Navbar() {
               </button>
             </div>
             <div className="mb-8 mt-auto flex w-full flex-wrap gap-4 px-4 sm:mb-0 sm:mt-0 sm:items-center sm:px-0">
-              <button className="w-full bg-[#383737] px-3 py-2 hover:bg-[#4f4e4e] sm:w-auto sm:bg-transparent">
-                <Link to="/login">Log in</Link>
-              </button>
+              {authStatus ? (
+                <img
+                  src={user.avatar}
+                  className="h-16 w-16 shrink-0 rounded-full sm:h-12 sm:w-12"
+                />
+              ) : (
+                <button className="w-full bg-[#383737] px-3 py-2 hover:bg-[#4f4e4e] sm:w-auto sm:bg-transparent">
+                  <Link to="/login">Log in</Link>
+                </button>
+              )}
               <button className="mr-1 w-full bg-[#ae7aff] px-3 py-2 text-center font-bold text-black shadow-[5px_5px_0px_0px_#4f4e4e] transition-all duration-150 ease-in-out active:translate-x-[5px] active:translate-y-[5px] active:shadow-[0px_0px_0px_0px_#4f4e4e] sm:w-auto">
-                <Link to="/register">Sign up</Link>
+                {authStatus ? (
+                  <button onClick={handleLogout}>Logout</button>
+                ) : (
+                  <Link to="/register">Sign up</Link>
+                )}
               </button>
             </div>
           </div>

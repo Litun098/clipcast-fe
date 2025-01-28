@@ -23,7 +23,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/subscribers" element={<Subscribers />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/:slug" element={<Profile />} />
           <Route path="/history" element={<History />} />
           <Route path="/liked-videos" element={<LikedVideo />} />
         </Routes>

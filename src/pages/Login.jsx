@@ -1,16 +1,20 @@
 import axios from "axios";
 
-import {  useState } from "react";
+import { useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+
 import Loading from "../components/Loading";
+import { login as authLogin } from "../store/authSlice";
 
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({ identifier: "", password: "" });
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -28,11 +32,12 @@ const Login = () => {
         },
         { withCredentials: true } // Ensures cookies are sent/received
       );
-      const user = response?.data?.data?.user;
-
-      console.log("Extracted user object:", user);
-
-     
+      const userData = response?.data?.data?.user;
+      
+      if (userData) {
+        console.log(userData);
+        dispatch(authLogin(userData));
+      }
       // Navigate to home route upon successful login
       navigate("/");
     } catch (err) {
