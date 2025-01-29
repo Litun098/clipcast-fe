@@ -194,7 +194,7 @@ function Navbar() {
               {authStatus ? (
                 <img
                   src={user.avatar}
-                  className="h-16 w-16 shrink-0 rounded-full sm:h-12 sm:w-12"
+                  className="h-16 w-16 shrink-0 rounded-full sm:h-12 sm:w-12 object-cover"
                 />
               ) : (
                 <button className="w-full bg-[#383737] px-3 py-2 hover:bg-[#4f4e4e] sm:w-auto sm:bg-transparent">

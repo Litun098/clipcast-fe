@@ -33,7 +33,7 @@ const Login = () => {
         { withCredentials: true } // Ensures cookies are sent/received
       );
       const userData = response?.data?.data?.user;
-      
+
       if (userData) {
         console.log(userData);
         dispatch(authLogin(userData));
